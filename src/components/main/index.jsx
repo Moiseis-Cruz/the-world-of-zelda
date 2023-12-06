@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Button from "../button";
 
 async function getDatosZelda() {
   const response = await fetch("https://zelda.fanapis.com/api/games");
@@ -71,15 +72,8 @@ export const Main = () => {
       {zeldaData.games.length > 0 ? (
         <>
           <ZeldaList games={currentGames} />
-          <button onClick={prevPage} disabled={currentPage === 1}>
-            Página Anterior
-          </button>
-          <button
-            onClick={nextPage}
-            disabled={indexOfLastGame >= zeldaData.games.length}
-          >
-            Próxima Página
-          </button>
+          <Button onClick={prevPage} disabled={currentPage === 1} label="Página Anterior" />
+          <Button onClick={nextPage} disabled={indexOfLastGame >= zeldaData.games.length} label="Próxima Página" />
         </>
       ) : (
         "❌❌ Não há nada sobre a franquia ❌❌"
