@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Button from "../button";
+import styled from "styled-components";
 
 async function getDatosZelda() {
   const response = await fetch("https://zelda.fanapis.com/api/games");
@@ -18,7 +19,7 @@ export const Main = () => {
           return (
             <li key={index}>
               <div style={{ border: "5px solid red" }}>
-                <h1>{item.name}</h1>
+                <Title>{item.name}</Title>
                 <h2>
                   <b>Developer:</b> {item.developer}
                 </h2>
@@ -81,3 +82,7 @@ export const Main = () => {
     </section>
   );
 };
+
+const Title = styled.h1`
+  margin-top: 20px;
+`
