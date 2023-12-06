@@ -59,24 +59,24 @@ export const Main = () => {
   };
 
   const gamesPerPage = 5; // Número de personagens por página
-  const indexOfLastCharacter = currentPage * gamesPerPage;
-  const indexOfFirstCharacter = indexOfLastCharacter - gamesPerPage;
-  const currentCharacters = zeldaData.games.slice(
-    indexOfFirstCharacter,
-    indexOfLastCharacter
+  const indexOfLastGame = currentPage * gamesPerPage;
+  const indexOfFirstGame = indexOfLastGame - gamesPerPage;
+  const currentGames = zeldaData.games.slice(
+    indexOfFirstGame,
+    indexOfLastGame
   );
 
   return (
     <section>
       {zeldaData.games.length > 0 ? (
         <>
-          <ZeldaList games={currentCharacters} />
+          <ZeldaList games={currentGames} />
           <button onClick={prevPage} disabled={currentPage === 1}>
             Página Anterior
           </button>
           <button
             onClick={nextPage}
-            disabled={indexOfLastCharacter >= zeldaData.games.length}
+            disabled={indexOfLastGame >= zeldaData.games.length}
           >
             Próxima Página
           </button>
