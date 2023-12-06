@@ -31,10 +31,10 @@ export const Main = () => {
                   <b>Released Date: </b>
                   {item.released_date}
                 </h4>
-                <p>
+                <TextDescription>
                   <b>Description: </b>
                   {item.description}
-                </p>
+                </TextDescription>
               </div>
             </li>
           );
@@ -85,8 +85,14 @@ export const Main = () => {
 
 const Title = styled.h1`
   margin-top: 20px;
+  width: 500px;
 `
 
 const SubTitle = styled.h2`
   margin-top: 20px;
+`
+
+const TextDescription = styled.p`
+  margin-top: 20px;
+  width: 500px;
 `
