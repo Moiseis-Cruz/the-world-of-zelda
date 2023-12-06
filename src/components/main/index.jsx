@@ -14,7 +14,7 @@ export const Main = () => {
 
   const ZeldaList = (props) => {
     return (
-      <ul>
+      <CardContent>
         {props.games.map((item, index) => {
           return (
             <li key={index}>
@@ -39,7 +39,7 @@ export const Main = () => {
             </li>
           );
         })}
-      </ul>
+      </CardContent>
     );
   };
 
@@ -82,6 +82,13 @@ export const Main = () => {
     </section>
   );
 };
+
+const CardContent = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+`
 
 const GameCard = styled.div`
   padding: 40px 20px;
