@@ -20,9 +20,9 @@ export const Main = () => {
             <li key={index}>
               <div style={{ border: "5px solid red" }}>
                 <Title>{item.name}</Title>
-                <h2>
+                <SubTitle>
                   <b>Developer:</b> {item.developer}
-                </h2>
+                </SubTitle>
                 <h2>
                   <b>Publiser: </b>
                   {item.publisher}
@@ -84,5 +84,9 @@ export const Main = () => {
 };
 
 const Title = styled.h1`
+  margin-top: 20px;
+`
+
+const SubTitle = styled.h2`
   margin-top: 20px;
 `
