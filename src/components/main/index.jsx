@@ -18,7 +18,7 @@ export const Main = () => {
         {props.games.map((item, index) => {
           return (
             <li key={index}>
-              <div style={{ border: "5px solid red" }}>
+              <GameCard>
                 <Title>{item.name}</Title>
                 <SubTitle>
                   <b>Developer:</b> {item.developer}
@@ -35,7 +35,7 @@ export const Main = () => {
                   <b>Description: </b>
                   {item.description}
                 </TextDescription>
-              </div>
+              </GameCard>
             </li>
           );
         })}
@@ -82,6 +82,11 @@ export const Main = () => {
     </section>
   );
 };
+
+const GameCard = styled.div`
+  padding: 40px 20px;
+  border: 5px solid red;
+`
 
 const Title = styled.h1`
   margin-top: 20px;
