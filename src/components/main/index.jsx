@@ -23,18 +23,18 @@ export const Main = () => {
                 <SubTitle>
                   <b>Developer:</b> {item.developer}
                 </SubTitle>
-                <h2>
+                <h3>
                   <b>Publiser: </b>
                   {item.publisher}
-                </h2>
-                <h4>
-                  <b>Released Date: </b>
-                  {item.released_date}
-                </h4>
+                </h3>
                 <TextDescription>
                   <b>Description: </b>
                   {item.description}
                 </TextDescription>
+                <h5 style={{marginTop: "10px"}}>
+                  <b>Released Date: </b>
+                  {item.released_date}
+                </h5>
               </GameCard>
             </li>
           );
@@ -92,19 +92,24 @@ const CardContent = styled.ul`
 
 const GameCard = styled.div`
   padding: 40px 20px;
-  border: 5px solid red;
+  border: 3px solid #f9f9f9;
+  height: 500px;
 `
 
-const Title = styled.h1`
+const Title = styled.h2`
   margin-top: 20px;
   width: 500px;
 `
 
-const SubTitle = styled.h2`
+const SubTitle = styled.h3`
   margin-top: 20px;
 `
 
 const TextDescription = styled.p`
   margin-top: 20px;
   width: 500px;
+  overflow-y: scroll;
+  height: 200px;
+  padding: 10px;
+  border: 3px solid #f9f9f9;
 `
