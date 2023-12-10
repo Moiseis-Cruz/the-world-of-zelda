@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react";
 import Button from "../button";
-import styled from "styled-components";
-
-async function getDatosZelda() {
-  const response = await fetch("https://zelda.fanapis.com/api/games");
-  const datos = await response.json();
-  return datos.data;
-}
+import { getDatosZelda } from "../../services";
+import { CardContent, GameCard, Title, SubTitle, TextDescription } from "./styles";
 
 export const Main = () => {
   const [ zeldaData, setZeldaData] = useState({ games: [] });
@@ -82,34 +77,3 @@ export const Main = () => {
     </section>
   );
 };
-
-const CardContent = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-`
-
-const GameCard = styled.div`
-  padding: 40px 20px;
-  border: 3px solid #f9f9f9;
-  height: 500px;
-`
-
-const Title = styled.h2`
-  margin-top: 20px;
-  width: 500px;
-`
-
-const SubTitle = styled.h3`
-  margin-top: 20px;
-`
-
-const TextDescription = styled.p`
-  margin-top: 20px;
-  width: 500px;
-  overflow-y: scroll;
-  height: 200px;
-  padding: 10px;
-  border: 3px solid #f9f9f9;
-`
